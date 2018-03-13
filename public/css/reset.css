@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+ 
+/*all font-family
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Oswald', sans-serif;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #494949;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+button,
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.slick-slide {
+outline: none !important;
+}
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+select:focus,
+select:active {
+    box-shadow: 0;
+    border: 0;
+    outline: 0
+}
+
+.padding-top {
+    padding-top: 70px;
+}
+
+.nav > li > a:focus,
+.nav > li > a:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border: 0;
+}
+
+.section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+input:focus,
+input:active {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none !important;
+    box-shadow: none !important
+}
+
+
+/* Remove Chrome Input Field's Unwanted Yellow Background Color */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+
+/*font class*/
+
+.font-sourcesans {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/*item class*/
+
+.section-title h2 {
+    color: #fba919;
+    font-size: 36px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.section-title {
+    color: #343434;
+    font-size: 14px;
+}
+
+.imran-aboutUs-content p {
+    color: #999999;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}

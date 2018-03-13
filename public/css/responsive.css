@@ -1,0 +1,432 @@
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .welcome-text {
+        padding-left: 70px;
+    }
+    .single-features p {
+        display: inline;
+    }
+    .imran-aboutUs-content p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .about-list ul li {
+        font-size: 13px;
+    }
+    .imrn-client-details {
+        font-size: 20px;
+    }
+    .slick-prev.clientprev {
+        left: 45.5%;
+    }
+    .slick-next.clientnext {
+        right: 45.5%
+    }
+    .imrn-client-details i {
+        font-size: 70px;
+        margin-bottom: 30px;
+    }
+    /*end of home page css*/
+    /*news page css*/
+    .side-slidernext {
+        right: 38%;
+    }
+    .side-sliderprev {
+        left: 38%
+    }
+    .details-nav .slick-slide::before {
+        left: 22%;
+        width: 56%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    ul.topaddres li {
+        margin-right: 9px;
+    }
+    .topaddres > li:last-child {
+  margin-right: 0;
+}
+    .menu li a {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+    .navbar-brand {
+        width: 190px;
+    }
+    .imran-home-area {
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    .parallax-window {
+        min-height: 900px
+    }
+    .welcome-text {
+        padding-left: 70px;
+    }
+    .get-btn a {
+        width: 200px;
+    }
+    .get-btn {
+        margin-top: 53px;
+    }
+    .single-features {
+        margin-bottom: 40px;
+    }
+    .imran-features-area.section-padding {
+        padding-bottom: 60px;
+    }
+    .imran-aboutUs-content {
+        margin-top: 50px;
+    }
+    .isotop-nav ul {
+        display: block;
+    }
+    .isotop-nav ul li {
+        padding: 0 10px;
+    }
+    .pro-title {
+        padding-left: 10px;
+    }
+    .imran-count-down {
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    .single-countdown h4 {
+        font-size: 14px;
+    }
+    .count-icon {
+        height: 80px;
+        line-height: 80px;
+        width: 80px;
+    }
+    .imrn-client-details i {
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+    .slick-prev.clientprev {
+        left: 45.5%;
+    }
+    .slick-next.clientnext {
+        right: 45.5%
+    }
+    .news-img img {
+        width: 100%;
+    }
+    /*end of home page css*/
+    .imran-page-title-area {
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    /*start sevice page css*/
+    .services-content h3 {
+        font-size: 20px
+    }
+    .services-content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .imran-single-services img {
+        width: 100%;
+    }
+    /*news page css*/
+    .side-slidernext {
+        right: 38%;
+    }
+    .side-sliderprev {
+        left: 38%
+    }
+    /*.single page css*/
+    .about-list {
+        margin-bottom: 20px;
+    }
+    .singlepos-sliderprev {
+        left: 39%
+    }
+    .singlepos-slidernext {
+        right: 39%
+    }
+    .single-sidebar {
+        margin-left: 0;
+    }
+    /*final css*/
+    .pro-title h4 {
+        font-size: 16px;
+        font-weight: 400
+    }
+    .details-nav .slick-slide::before {
+        left: 20%;
+        width: 60%;
+    }
+    /*fixing css*/
+    .about-list {
+        margin-top: 20px;
+    }
+    .constructo-aboutUs-content {
+        margin-top: 50px;
+    }
+    .constructo-aboutUs-content p{
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .topaddres {
+        display: none;
+    }
+    .social-link {
+        text-align: center;
+    }
+    .navbar-brand {
+        padding: 8px 6px;
+        width: 170px;
+    }
+    .navbar-toggle span {
+        background: #fba919;
+    }
+    .menu li.searchbtn {
+        text-align: center;
+        padding-left: 0
+    }
+    .menu li a::before {
+        left: 20%;
+        width: 60%;
+    }
+    .welcome-text h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .btn-start {
+        font-size: 12px;
+        height: 45px;
+        line-height: 45px;
+        width: 143px;
+        margin-right: 0;
+    }
+    .btn-start.borderw {
+        margin-right: 0;
+    }
+    .btn-start.active {
+        margin-right: 0;
+    }
+    .welcome-btn {
+        padding-top: 20px;
+    }
+    .homenext {
+        bottom: 3% !important;
+        font-size: 18px;
+        height: 30px;
+        position: absolute;
+        right: 40%;
+        top: auto;
+        width: 30px;
+        border-color: #fff;
+        color: #fff;
+    }
+    .homeprev {
+        border-color: #fff;
+        bottom: 3%;
+        color: #fff;
+        font-size: 18px;
+        height: 30px;
+        left: 40%;
+        line-height: 30px;
+        position: absolute;
+        top: auto;
+        width: 30px;
+    }
+    .menu li.searchbtn {
+        display: none;
+    }
+    .welcome-text h1.titlecolor {
+        padding-bottom: 15px;
+    }
+    .get-btn {
+        margin-top: 23px;
+        text-align: center;
+    }
+    .get-btn a {
+        height: 45px;
+        line-height: 46px;
+        width: 150px;
+    }
+    .get-quate-content {
+        text-align: center;
+    }
+    .single-features {
+        margin-bottom: 40px;
+    }
+    .imran-features-area.section-padding {
+        padding-bottom: 60px;
+    }
+    .about-img2 {
+        display: none
+    }
+    .imran-aboutUs-content p {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .imran-aboutUs-content {
+        margin-top: 40px;
+    }
+    .isotop-nav ul li {
+        font-size: 14px;
+        line-height: 30px;
+        padding: 0 10px;
+    }
+    .imran-count-down::before {
+        background: rgba(0, 0, 0, 0.85) none repeat scroll 0 0;
+    }
+    .single-countdown {
+        margin-bottom: 40px;
+    }
+    .imran-count-down.section-padding {
+        padding-bottom: 60px;
+    }
+    .imrn-client-details {
+        font-size: 16px;
+    }
+    .imrn-client-details p {
+        display: inline;
+    }
+    .imrn-client-details i {
+        margin-bottom: 0px;
+        text-align: center;
+        width: 100%;
+        font-size: 60px;
+    }
+    .client-name {
+        margin-top: 30px;
+    }
+    .details-nav {
+        margin-top: 10px;
+    }
+    .contat-usf {
+        margin-bottom: 10px;
+        margin-right: 0;
+        width: 150px;
+    }
+    .footer-link {
+        text-align: center;
+    }
+    .footer-text {
+        text-align: center;
+    }
+    .slick-prev.clientprev {
+        left: 38.5%;
+    }
+    .slick-next.clientnext {
+        right: 38.5%
+    }
+    /*end of home page css*/
+    /*about page */
+    .imran-page-title h1 {
+        font-size: 30px;
+    }
+    .imran-page-title h1.titlecolor {
+        padding-bottom: 15px;
+    }
+    .single-chose > h4 span {
+        color: #fff;
+        padding-right: 15px;
+    }
+    .imran-whychoose-us::before {
+        width: 100%
+    }
+    .best-features-accoudion {
+        margin-bottom: 50px;
+    }
+    .single-chose > h4 {
+        margin-bottom: 10px;
+    }
+    .single-chose {
+        margin-bottom: 20px;
+    }
+    /*contact page css*/
+    .googlemap {
+        height: 350px;
+        margin-bottom: 20px;
+    }
+    .contact-form {
+        padding: 50px 15px;
+    }
+    input.single-input {
+        margin-bottom: 10px;
+    }
+    .imran-single-services img {
+        width: 100%;
+    }
+    /*news page css*/
+    .date {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    .post-title > h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .single-sidebar {
+        margin-left: 0;
+    }
+    .side-slidernext {
+        right: 39%;
+    }
+    .side-sliderprev {
+        left: 39%
+    }
+    .parallax-windowf {
+        min-height: 1500px
+    }
+    .constructo-aboutUs-content p {
+  margin-bottom: 15px;
+}
+.constructo-aboutUs-content {
+  margin-top: 30px;
+}
+.about-list {
+  margin-top: 20px;
+}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .slick-prev.clientprev {
+        left: 42%;
+    }
+    .slick-next.clientnext {
+        right: 42%
+    }
+    .imran-single-project {
+        margin-left: 30px;
+    }
+    .welcome-text h1 {
+        display: inline-block;
+    }
+    .welcome-text {
+        font-size: 12px;
+    }
+    .topbar-area {
+        padding: 5px 0
+    }
+    .homeprev {
+        left: 43%;
+    }
+    .homenext {
+        right: 43%;
+    }
+    /*end of home page css*/
+    .imran-single-services img {
+        width: 100%;
+    }
+    /*news page css*/
+    .widget-single-slider {
+        text-align: center;
+    }
+    .widget-single-slider img {
+        display: inline-block;
+    }
+    .widget-single-slider::before {
+        width: 60%;
+        left: 20%
+    }
+}

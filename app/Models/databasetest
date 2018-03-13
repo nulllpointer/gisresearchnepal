@@ -1,0 +1,285 @@
+/*
+SQLyog Trial v12.5.1 (64 bit)
+MySQL - 5.7.20-0ubuntu0.16.04.1 : Database - journey
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+ 
+
+/*Table structure for table `aboutus` */
+DROP TABLE IF EXISTS `roles`;
+
+CREATE TABLE `roles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `label` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `roles` */
+
+insert  into `roles`(`id`,`name`,`label`,`created_at`,`updated_at`) values 
+(1,'super','This goup has all permissions',NULL,NULL);
+
+
+
+
+
+
+
+DROP TABLE IF EXISTS `admins`;
+
+CREATE TABLE `admins` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `permissions` text COLLATE utf8mb4_unicode_ci,
+  `activated` tinyint(1) NOT NULL DEFAULT '0',
+  `activation_code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `activated_at` timestamp NULL DEFAULT NULL,
+  `last_login` timestamp NULL DEFAULT NULL,
+  `persist_code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reset_password_code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `first_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `admins_email_unique` (`email`),
+  KEY `admins_activation_code_index` (`activation_code`),
+  KEY `admins_reset_password_code_index` (`reset_password_code`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `admins` */
+
+insert  into `admins`(`id`,`email`,`password`,`permissions`,`activated`,`activation_code`,`activated_at`,`last_login`,`persist_code`,`reset_password_code`,`remember_token`,`first_name`,`last_name`,`created_at`,`updated_at`) values 
+(1,'admin@change.me','$2y$10$ExEqM7D58DQms99ZRJeviu6No3hIqJKsHM3SCjm807FrO7H9uBS8O',NULL,0,NULL,NULL,NULL,NULL,NULL,'OnFe8vWZS9kws1NuEk81z2NhcD0ebeYXT2vJdpcEajsMUH2jdp6QbDV6ZwZk',NULL,NULL,'2018-01-22 08:14:42','2018-01-22 08:14:42'),
+(2,'hitesh.jha415@gmail.com','$2y$10$LIA5jObvNuBjlJ8gfiiguO8qeT/QkS4AzkslIBBWt5NSvGY9XfpgS',NULL,0,NULL,NULL,NULL,NULL,NULL,'Cn33LvIeq5gfjDA0Q1qvuBX8lr7yMbvYo9a5HRnnRqFBosgrPf1Dv82Yyoce','Hitesh','Jhagreat','2018-01-22 16:14:50','2018-01-22 16:51:25');
+
+
+
+DROP TABLE IF EXISTS `aboutus`;
+
+CREATE TABLE `aboutus` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `mobile` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `aboutus` */
+
+insert  into `aboutus`(`id`,`name`,`address`,`email`,`created_at`,`updated_at`,`mobile`) values 
+(1,'International Trade Group','Pingalsthan,Gausala,Kathmandu,Nepal','yuvraj@kajisab.com','2018-01-22 16:18:53','2018-01-22 17:47:11','977982301758,9779898978787,737473737373');
+
+/*Table structure for table `admin_role` */
+
+DROP TABLE IF EXISTS `admin_role`;
+
+CREATE TABLE `admin_role` (
+  `role_id` int(10) unsigned NOT NULL,
+  `admin_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`role_id`,`admin_id`),
+  KEY `admin_role_admin_id_foreign` (`admin_id`),
+  CONSTRAINT `admin_role_admin_id_foreign` FOREIGN KEY (`admin_id`) REFERENCES `admins` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `admin_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `admin_role` */
+
+insert  into `admin_role`(`role_id`,`admin_id`) values 
+(1,1),
+(1,2);
+
+/*Table structure for table `admins` */
+
+/*Table structure for table `carousel` */
+
+DROP TABLE IF EXISTS `carousel`;
+
+CREATE TABLE `carousel` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pic_url` varchar(50) DEFAULT NULL,
+  `pic_alt_name` varchar(50) DEFAULT NULL,
+  `caption_heading` varchar(100) DEFAULT NULL,
+  `caption_desc` varchar(300) DEFAULT NULL,
+  `btn_text` varchar(50) DEFAULT NULL,
+  `btn_url` varchar(50) DEFAULT NULL,
+  `section_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `carousel_id_uindex` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `carousel` */
+
+insert  into `carousel`(`id`,`pic_url`,`pic_alt_name`,`caption_heading`,`caption_desc`,`btn_text`,`btn_url`,`section_name`) values 
+(1,'images/intro/2.jpg','image 2','Trek With Himalayan Trek','We do things differently company providing key digital services.\n            Focused on helping our clients to build a successful business on web and mobile','Tell Me More','#intro','intro'),
+(2,'images/intro/1.jpg','img 1','Marketing & Cunsulting','We meet and get to know you. You tell us and we listen.\n            We build your website to realise your vision and we deliver the ready product.','View ABC','#intro','intro'),
+(3,'images/intro/3.jpeg','img 3','Web Design & Development','LA is always so much fun with more then 100 destinations lot to do then 100 destinations lot to do asdnn kjdsf jdf!','View img 3','#intro','intro');
+
+/*Table structure for table `documents` */
+
+DROP TABLE IF EXISTS `documents`;
+
+CREATE TABLE `documents` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `doc_url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `doc_alt_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `caption_heading` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `caption_description` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `btn_url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `section_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `documents` */
+
+insert  into `documents`(`id`,`doc_url`,`doc_alt_name`,`caption_heading`,`caption_description`,`btn_url`,`section_name`,`created_at`,`updated_at`) values 
+(4,'img1110.jpg','hjshj','ndms','hjshj','hjhsjh','hjhsjhj','2018-01-23 10:07:14','2018-01-23 10:07:14'),
+(5,'IMG_20180123_0110352.jpg','hjh','jkh','hj','jhjh','hj','2018-01-23 10:13:07','2018-01-23 10:13:07'),
+(6,'1660114057.jpg','hj','h','jhj','hjh','hj','2018-01-23 10:26:43','2018-01-23 10:26:43'),
+(7,'IMG_20161001_120351.jpg','hjhj','hjhj','hj','hjh','jhj','2018-01-23 10:27:38','2018-01-23 10:27:38');
+
+/*Table structure for table `links` */
+
+DROP TABLE IF EXISTS `links`;
+
+CREATE TABLE `links` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `display` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `main` tinyint(1) DEFAULT NULL,
+  `show_menu` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `links` */
+
+insert  into `links`(`id`,`display`,`url`,`created_at`,`updated_at`,`main`,`show_menu`) values 
+(1,'Links','Link','2018-01-22 08:14:42','2018-01-22 10:39:03',1,1),
+(2,'Roles','Role',NULL,NULL,1,1),
+(3,'Permissions','Permission',NULL,NULL,1,1),
+(4,'Admins','Admin',NULL,'2018-01-22 10:39:03',1,1),
+(9,'aboutuss','aboutus','2018-01-22 15:58:54','2018-01-22 15:58:54',NULL,1),
+(10,'documentss','documents','2018-01-23 09:03:49','2018-01-23 09:03:49',NULL,1);
+
+/*Table structure for table `migrations` */
+
+DROP TABLE IF EXISTS `migrations`;
+
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `migrations` */
+
+insert  into `migrations`(`id`,`migration`,`batch`) values 
+(1,'2014_10_12_000000_create_users_table',1),
+(2,'2014_10_12_100000_create_password_resets_table',1),
+(3,'2014_11_16_205658_create_admins_table',2),
+(4,'2014_12_02_152920_create_password_reminders_table',2),
+(5,'2015_02_20_130902_create_url_table',2),
+(6,'2015_03_15_123956_edit_url_table',2),
+(7,'2016_02_10_181651_create_roles_tables',2),
+(8,'2016_09_20_123956_edit_url_menu_table',2),
+(9,'2016_09_20_143956_edit_roles_table',2),
+(10,'2018_01_22_081702_create_about_table',3),
+(11,'2018_01_22_102225_create_aboutus_table',4),
+(12,'2018_01_22_155933_create_aboutus_table',5),
+(13,'2018_01_23_090446_create_documents_table',6);
+
+/*Table structure for table `password_reminders` */
+
+DROP TABLE IF EXISTS `password_reminders`;
+
+CREATE TABLE `password_reminders` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  KEY `password_reminders_email_index` (`email`),
+  KEY `password_reminders_token_index` (`token`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `password_reminders` */
+
+/*Table structure for table `password_resets` */
+
+DROP TABLE IF EXISTS `password_resets`;
+
+CREATE TABLE `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `password_resets` */
+
+insert  into `password_resets`(`email`,`token`,`created_at`) values 
+('hitesh.jha415@gmail.com','$2y$10$8MufeggJJakhRIkXprpfT.iNhkJ649lRvW9f/hHtiZNGD869dUMMa','2018-01-22 16:52:56');
+
+/*Table structure for table `permission_role` */
+
+
+
+
+
+DROP TABLE IF EXISTS `permissions`;
+
+CREATE TABLE `permissions` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `label` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `permissions` */
+
+/*Table structure for table `roles` */
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+DROP TABLE IF EXISTS `permission_role`;
+
+CREATE TABLE `permission_role` (
+  `permission_id` int(10) unsigned NOT NULL,
+  `role_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`permission_id`,`role_id`),
+  KEY `permission_role_role_id_foreign` (`role_id`),
+  CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `permission_role` */
+
+/*Table structure for table `permissions` */
+
